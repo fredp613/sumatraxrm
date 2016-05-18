@@ -1,0 +1,29 @@
+
+<h1>{{title }}</h1>
+
+<h3>login</h3>
+<form action="/login" method="post">
+	<p>User<br>
+	<input type='text' name="username" value="" /><br>
+	<input type='password' name="password" value="" /><br>		
+	</p>		
+	<button type="submit"> Login </button>
+</form>
+
+{{!-- <p>Welcome to {{title }}</p>
+
+<form action="/user" method="post">
+	<p>User<br>
+	<input type='text' name="user[email]" value="" /><br>
+	<input type='password' name="user[password]" value="" /><br>		
+	</p>	
+	
+	<button type="submit"> Add </button>
+</form> --}}
+
+<ul>	
+{{#each users}}
+	<li>{{this.email}}</li>
+{{/each}}
+
+</ul>

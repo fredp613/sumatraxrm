@@ -1,0 +1,33 @@
+open postgres in the apps (mission control)
+terminal:
+ type psql to launch the utility
+ \list to view dbs
+\connect to connect to a db
+\dt to list its tables
+\d tablename (rembmer to double quote table name)
+\q to quit
+
+create db:createdb -h localhost -p 5432 testdb
+drop db:dropdb -h localhost -p 5432 testdb
+
+remember to double quote table names (e.g. "Accounts") when using psql (e.g. \d "Accounts")
+
+sequelize migration:create --name somename
+sequelize model:create --name somename --attributes firstattr:string, secondattr:integer
+
+sequelize db:migrate
+
+Dont forget to secure the db with a real pwd etc.
+Dont forget to find a better way to assing the server port. currently you have it in the same config file that 
+stores some of the db information - which is also stored in config.json (config.js)
+
+
+read up on schemas when you get a change (postgres schemas)
+
+to write a query in psql (always include \g at the end):
+SELECT * FROM "Accounts" \g
+DROP TABLE "Accounts" \g
+
+
+
+
